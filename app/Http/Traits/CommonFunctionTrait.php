@@ -11,7 +11,8 @@ trait CommonFunctionTrait
     public function sendPushNotification($title,$msg,$device_token)
     {
 
-        $token=$device_token??"f5oP07qKOZKn8BQJOTQEbW:APA91bGUdgxES5w1dpcuK8icBaSrEN0jg1eXv87nASmQsq2-yd4gJfnVQ06pAZoxgxzPJSR9x_9loVvG4nZ-4fz-IuZW0LndPzLVYz2JfwNWNh9JTQrB3-faOGF1Tc6pGUm7Epb7FDZ5";
+        $token=$device_token;
+        
         $firebase = (new Factory)
         
             ->withServiceAccount(storage_path('app/vue-laravel-a0c98-firebase-adminsdk-n4p07-7a4595307d.json'));

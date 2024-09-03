@@ -19,8 +19,8 @@ class ChatController extends Controller
         'text' => $request->message
     ]);
     broadcast(new MessageSent($message));
-
-    $this->sendPushNotification(env('APP_NAME'),$request->message,$friend->device_token);
+    $ftoken = $friend->device_token??'f5oP07qKOZKn8BQJOTQEbW:APA91bHqSgeG5W3NJbYt5CBNOth0HqExSe_JC-WiCRrTBXLe-FYu0hMjmEp357-KZU3G52XacqGvnbusLnsfx8j2ZiFhNJbnlhS92_D6IGceC84GsMNgwbrCaXVl9RHES2IDrS42I_L8';
+    $this->sendPushNotification(env('APP_NAME'),$request->message,$ftoken);
 
     return  $message;
    } 
